@@ -5,9 +5,11 @@ metadata:
 spec:
   releaseName: istio-operator
   chart:
-    git: git@github.com:istio/istio
-    ref: master
-    path: manifests/charts/istio-operator
+    spec:
+      chart: manifests/charts/istio-operator
+      sourceRef:
+        kind: GitRepository
+        name: istio
   interval: 1h0m0s
   install:
     remediation:
